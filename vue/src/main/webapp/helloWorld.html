@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+</head>
+<body>
+<!--这是view-->
+<div id="app">
+    {{ message }}
+</div>
+<div id="app1">
+    {{ message }}
+</div>
+<div id="app2">
+  <span v-bind:title="message">
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
+</div>
+<div id="app3">
+    <p v-if="see">你看的见我</p>
+</div>
+<div id="app4">
+    <ol>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ol>
+</div>
+<div id="app5">
+    <p>{{message}}</p>
+    <button v-on:click="resevermessage">逆转消息</button>
+</div>
+<div id="app6">
+    <p>{{message}}</p>
+    <input v-model="message">
+</div>
+<div id="app7">
+    <ol>
+        <todo_cmt></todo_cmt>
+        <todo-item></todo-item>
+    </ol>
+</div>
+<div id="app8">
+    <ol>
+        <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+    </ol>
+</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+    //    这是我们的model
+    var modelData = {message: 'Hello World'};
+    //这是我们的viewModel
+    new Vue({
+        el: '#app',
+        data: modelData
+    });
+
+    new Vue({
+        el: '#app1',
+        data: {
+            message: 'Hello Vue!'
+        }
+    })
+
+    new Vue({
+        el: '#app2',
+        data: {
+            message: '页面加载于 ' + new Date()
+        }
+    })
+
+    new Vue({
+        el: '#app3',
+        data: {
+            see: true
+        }
+    })
+
+    new Vue({
+        el: '#app4',
+        data: {
+            todos:[
+                {text:'最大'},
+                {text:'最小'},
+                {text:'最无敌'}
+            ]
+        }
+    })
+
+    new Vue({
+        el:'#app5',
+        data:{
+            message:'abc'
+        },
+        methods:{
+            resevermessage:function(){
+                this.message = this.message.split('').reverse().join('');
+            }
+        }
+    })
+
+    new Vue({
+        el: '#app6',
+        data: {
+            message: 'sdfsdfs'
+        }
+    })
+
+    Vue.component('todo_cmt',{
+        template: '<li>这是代办事项模板</li>'
+    });
+
+    // 定义名为 todo-item 的新组件
+//    Vue.component('todo-item', {
+//        template: '<li>这是个待办项</li>'
+//    })
+
+    Vue.component('todo-item', {
+        // todo-item 组件现在接受一个
+        // "prop"，类似于一个自定义属性
+        // 这个属性名为 todo。
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+    })
+
+
+    Vue.component('todo-item', {
+        props: ['todo'],
+        template: '<li>{{ todo.text }}</li>'
+    })
+    new Vue({
+        el: '#app8',
+        data: {
+            groceryList: [
+                { text: '蔬菜' },
+                { text: '奶酪' },
+                { text: '随便其他什么人吃的东西' }
+            ]
+        }
+    })
+</script>
+</html>
