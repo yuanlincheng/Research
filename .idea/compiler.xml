@@ -12,10 +12,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="reh-jdk" target="1.5" />
-      <module name="Research" target="1.5" />
-      <module name="spring" target="1.5" />
-      <module name="vue" target="1.5" />
+      <module name="reh-jdk" target="1.8" />
+      <module name="Research" target="1.8" />
+      <module name="spring" target="1.8" />
+      <module name="vue" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
