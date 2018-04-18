@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Exam/Exam.iml" filepath="$PROJECT_DIR$/Exam/Exam.iml" />
       <module fileurl="file://$PROJECT_DIR$/Research.iml" filepath="$PROJECT_DIR$/Research.iml" />
       <module fileurl="file://$PROJECT_DIR$/reh-jdk/reh-jdk.iml" filepath="$PROJECT_DIR$/reh-jdk/reh-jdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring/spring.iml" filepath="$PROJECT_DIR$/spring/spring.iml" />

@@ -11,6 +11,7 @@
         <module>reh-jdk</module>
         <module>vue</module>
         <module>spring</module>
+        <module>Exam</module>
     </modules>
     <packaging>pom</packaging>
 
